@@ -51,8 +51,8 @@ git restore --source=<commit> # 将工作区回滚至指定版本
 git rm <file-name>  # 删除文件
 git add <file-name>  # 将文件放入暂存区(此时文件状态为staged）
 git add .  # 将所有放入暂存区(此时文件状态为staged）
-git commit -m "some messages"  # 将文件提交至本地仓库并备注信息
-git commit -am "some messages"  # 等同于git add . && git commit -m
+git commit <file-name> -m "some messages"  # 将文件提交至本地仓库并备注信息
+git commit <file-name> -am "some messages"  # 等同于git add . && git commit -m
 ## git commit --amend  # 修改上次提交的备注信息
 git push  # 将文件从本地仓库提交到远程仓库
 
@@ -85,6 +85,8 @@ git branch -d <branch-nane>  # 删除本地分支
 git branch -m <old-branch-name> <new-branch-name>  # 重新命名分支
 
 git commit -am "some message"  # 分支内容提交和正常没有区别
+git push --set-upstream origin <branch-name>  # 第一次提交时需要设置远程分支
+
 git merge <branch-name>  # 以当前分支为主分支合并目标分支
 ```
 
