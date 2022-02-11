@@ -1,3 +1,7 @@
+# Git playground
+
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/Bad-Oranges/LearnGit?label=version)
+
 ## 基本配置
 
 ```bash
