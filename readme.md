@@ -20,9 +20,9 @@ ssh文件默认路径`C:\Users\<User Name>\.ssh`
 创建本机ssh之后可以在GitHub的settings里面添加,然后就可以连接GitHub仓库了
 
 ```bash
-git remote add origin git@github.com:Bad-Oranges/LearnGit.git  #添加远程仓库
-git branch -M main  # 创建主分支
-git push -u origin main  # Origin表示远程仓库，main表示本地仓库
+git remote add origin git@github.com:Bad-Oranges/LearnGit.git  #添加远程仓库(SSH方式)
+git branch -M main
+git push -u origin main  # push到远程仓库
 ```
 
 
