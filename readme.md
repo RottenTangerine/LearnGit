@@ -50,6 +50,8 @@ git restore --source=<commit> # 将工作区回滚至指定版本
 
 ![image-20220130233742518](readme.assets/image-20220130233742518.png)
 
+### 文件提交 
+
 ```bash
 # 一般提交流程
 git rm <file-name>  # 删除文件
@@ -59,7 +61,20 @@ git commit <file-name> -m "some messages"  # 将文件提交至本地仓库并�
 git commit <file-name> -am "some messages"  # 等同于git add . && git commit -m
 ## git commit --amend  # 修改上次提交的备注信息
 git push  # 将文件从本地仓库提交到远程仓库
+```
 
+### 修改已经commit的注释
+
+```bash
+git rebase -i HEAD~n  # 显示最近第N次的提交
+# 将要修改的注释前的pick改为edit（如果修改多个注释，就多改几个）
+git commit --amend
+git rebase --continue
+# 对于多次提交重复上面两个步骤
+git push --force origin master  # 将代码push到远程仓库
+```
+
+```bash
 # 从远程仓库获取文件
 git fetch <远程主机名> <分支名>  # 获取远程仓库特定分支的更新
 git fetch --all  # 获取远程仓库所有分支的更新
