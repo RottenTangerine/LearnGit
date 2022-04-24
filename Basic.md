@@ -1,3 +1,5 @@
+# Git Basic
+
 ## 基本配置
 
 ```bash
@@ -51,6 +53,7 @@ git restore --source=<commit> # 将工作区回滚至指定版本
 ```bash
 # 一般提交流程
 git rm <file-name>  # 删除文件
+git rm -r <file-name> # 递归模式（删除文件夹下所有子文件）
 git add <file-name>  # 将文件放入暂存区(此时文件状态为staged）
 git add .  # 将所有放入暂存区(此时文件状态为staged）
 git commit <file-name> -m "some messages"  # 将文件提交至本地仓库并备注信息
@@ -133,55 +136,3 @@ git tag -d v0.9
 git push origin --delete v0.9  # Git版本 > V1.7.0
 git push origin :refs/tags/v0.9  # 旧版本Git
 ```
-
-## 其他
-
-### commit message规范
-
-[git commit 规范指南 - 简书](https://www.jianshu.com/p/201bd81e7dc9)
-
-#### Breaking Change
-
-以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法。
-
-```
-BREAKING CHANGE: isolate scope bindings definition has changed.
-
-    To migrate the code follow the example below:
-
-    Before:
-
-    scope: {
-      myAttr: 'attribute',
-    }
-
-    After:
-
-    scope: {
-      myAttr: '@',
-    }
-
-    The removed `inject` wasn't generaly useful for directives so there should be no code using it.
-```
-
-#### Closed Issue
-
-如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue
-
-```
-Closes #234
-```
-
-#### Revert
-
-以revert:开头，后面跟着被撤销 Commit 的 Header
-
-Body部分的格式是固定的，必须写成`This reverts commit <hash>`.，其中的hash是被撤销 commit 的 SHA 标识符。
-
-```
-revert: feat(pencil): add 'graphiteWidth' option
-
-This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-```
-
-如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的Reverts小标题下面。
