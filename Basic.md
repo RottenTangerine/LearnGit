@@ -85,11 +85,13 @@ git remote -v  # 查看远程仓库
 git remote add 仓库名 地址  # 添加远程仓库
 ```
 
+## 工作流与标签管理
 
+推荐阅读
 
+[translations/README.md at master · oldratlee/translations (github.com)](https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/README.md)
 
-
-## 分支与标签管理
+[GitHub Pull Request入门 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/51199833)
 
 ```bash
 git branch  # 查看本地分支
