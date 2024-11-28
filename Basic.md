@@ -37,6 +37,8 @@ git status  # 查看本地文件状态
 git log  # 查看提交日志
 git reflog  # 查看命令历史
 
+git reset # 取消上一次的git add
+
 git restore <file_name>  # 丢弃工作区的修改
 git restore  # 丢弃工作区所有文件的修改
 git restore --staged <file_name>  # 撤销暂存区的修改
